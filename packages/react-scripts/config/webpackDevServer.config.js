@@ -100,6 +100,8 @@ module.exports = function (proxy, allowedHost) {
     },
 
     https: getHttpsConfig(),
+    // automatically switch to http2 if https is enabled
+    http2: !!getHttpsConfig(),
     host,
     historyApiFallback: {
       // Paths with dots should still use the history fallback.
